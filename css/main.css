@@ -13,83 +13,81 @@
 
 .middle{width: 100%; height: 1000px; /*background: linear-gradient(#97CBFF,#FFC1E0);*/ background:radial-gradient(circle 1500px at 0px 0px, #FFC1E0,#97CBFF); margin-left: auto; margin-right: auto; position: relative;}
 
-.container{
-            max-width: 85%;
-            margin: 0 auto;
-        }
-        .slide{
-            width: 100%;
-            min-height: 180px;
-            overflow: hidden;
-            position: relative;
-  
-        }
-        .slide .img{
-            overflow: hidden;
-            position: absolute;
-            /*transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;*/
-        }
-        .slide .img img{
-        	border-radius: 50px;
-        	/*box-shadow:0px 0px 20px 5px #666;*/
-            width: calc(100% - 14px);
-            height: calc(100% - 14px);
-            margin: 0px;
-        }
-        .slide .img1{
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            z-index: 1;
-            transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;
-        }
-        .slide .img2{
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 0%;
-            z-index: 2;
-            transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;
-        }
-        .slide .img3{
-            width: 80%;
-            height: 80%;
-            top: 10%;
-            left: 10%;
-            z-index: 3;
-            transition: width 0.2s,height 0.2s,top 0.2s,left 0.2s,z-index 0.2s;
-        }
-        .slide .img4{
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 40%;
-            z-index: 2;
-            transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.1s;
-        }
-        .slide .img5{
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            z-index: 1;
-            transition: width 0.4s,height 0.4s,top 0.4s,left 0.4s,z-index 0.4s;
-        }
-        .slide-bt{
-            position: absolute;
-            left: 50%;
-            bottom: 16%;
-            z-index: 10;
-        }
-        .slide-bt span{
-            width: 24px;
-            height: 8px;
-            background: #c9caca;
-            float: left;
-            margin: 5px;
-            border-radius: 4px;
-        }
-        .slide .slide-bt .on{
-            background: #ffd200;
-        }
+#frame{/*----------图片轮播相框容器----------*/
+    position: absolute; /*--绝对定位，方便子元素的定位*/
+    width: 300px;
+    height: 200px;
+    overflow: hidden;/*--相框作用，只显示一个图片---*/
+    border-radius:5px;
+    left: 40%;
+    top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+        
+#dis{/*--绝对定位方便li图片简介的自动分布定位---*/
+    position: absolute;
+    left: -50px;
+    top: -10px;
+    opacity: 0.5;
+}
+#dis li{
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    margin: 0 50px;
+    float: left;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background: #000;
+}
+
+#photos img {
+    float: left;
+    width:300px;
+    height:200px;
+}
+#photos{/*---设置总的图片宽度--通过位移来达到轮播效果----*/
+    position: absolute;z-index:9px;
+    width: calc(300px * 5);/*---修改图片数量的话需要修改下面的动画参数*/
+}
+.play{
+    animation: ma 20s ease-out infinite alternate;/**/
+}
+@keyframes ma{/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/
+     0%,  20%{  margin-left:     0px;   }
+    25%,  40%{  margin-left:  -300px;   }
+    45%,  60%{  margin-left:  -600px;   }
+    65%,  80%{  margin-left:  -900px;   }
+    85%, 100%{  margin-left: -1200px;   }
+}
+.num{
+    position:absolute;z-index:10;
+    display:inline-block;
+    right:50px;top:165px;
+    border-radius:100%;
+    background:#fff;
+    width:12px;height:12px;
+    line-height:25px;
+    cursor:pointer;
+    color:#fff;
+    text-align:center;
+    opacity:0.8;
+}
+.num:hover{background:#aaa;}
+.num:hover,#photos:hover{animation-play-state:paused;}
+.num:nth-child(2){margin-right:40px}
+.num:nth-child(3){margin-right:80px}
+.num:nth-child(4){margin-right:120px}
+.num:nth-child(5){margin-right:160px}
+#a1:hover ~ #photos{animation: ma1 1s ease-out forwards;}
+#a2:hover ~ #photos{animation: ma2 1s ease-out forwards;}
+#a3:hover ~ #photos{animation: ma3 1s ease-out forwards;}
+#a4:hover ~ #photos{animation: ma4 1s ease-out forwards;}
+#a5:hover ~ #photos{animation: ma5 1s ease-out forwards;}
+@keyframes ma1 {0%{margin-left:-1200px;}100%{margin-left:-0px;} }
+@keyframes ma2 {0%{margin-left:-1200px;}100%{margin-left:-300px;}   }
+@keyframes ma3 {100%{margin-left:-600px;}   }
+@keyframes ma4 {100%{margin-left:-900px;}   }
+@keyframes ma5 {100%{margin-left:-1200px;}  }
