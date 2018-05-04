@@ -47,6 +47,11 @@
     float: left;
     width:300px;
     height:200px;
+    -moz-user-select: none;   
+    -webkit-user-select: none;   
+    -ms-user-select: none;   
+    -khtml-user-select: none;   
+    user-select: none;  
 }
 #photos{/*---设置总的图片宽度--通过位移来达到轮播效果----*/
     position: absolute;z-index:9px;
