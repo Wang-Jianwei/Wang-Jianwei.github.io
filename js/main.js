@@ -1,179 +1,49 @@
+/*
+js 字符串操作：
+concat() 连接连接多个字符串，返回连接后的字符串；
+replace() 替换与正则表达式匹配的子串；
+substring() 提取字符串中的两个指定的索引号之间的字符；
+*/
 
-var autoLb = true;         //autoLb=true为开启自动轮播
-var autoLbtime = 3;         //autoLbtime为轮播间隔时间（单位秒）
-var touch = true;           //touch=true为开启触摸滑动
-var slideBt = true;         //slideBt=true为开启滚动按钮
-
-var slideNub;               //轮播图片数量
-
-//窗口大小改变时改变轮播图宽高
-$(window).resize(function(){
-   $('.slide').height($('.slide').width()*0.56);
-});
-
-
-$(function(){
-    $('.slide').height($('.slide').width()*0.56);
-    slideNub = $('.slide .img').size();             //获取轮播图片数量
-    for(i=0;i<slideNub;i++){
-        $('.slide .img:eq('+i+')').attr("data-slide-imgId",i);
-    }
-
-
-    //根据轮播图片数量设定图片位置对应的class
-    if(slideNub==1){
-        for(i=0;i<slideNub;i++){
-            $('.slide .img:eq('+i+')').addClass("img3");
-        }
-    }
-    if(slideNub==2){
-        for(i=0;i<slideNub;i++){
-            $('.slide .img:eq('+i+')').addClass("img"+(i+3));
-        }
-    }
-    if(slideNub==3){
-        for(i=0;i<slideNub;i++){
-            $('.slide .img:eq('+i+')').addClass("img"+(i+2));
-        }
-    }
-    if(slideNub>3&&slideNub<6){
-        for(i=0;i<slideNub;i++){
-            $('.slide .img:eq('+i+')').addClass("img"+(i+1));
-        }
-    }
-    if(slideNub>=6){
-        for(i=0;i<slideNub;i++){
-            if(i<5){
-               $('.slide .img:eq('+i+')').addClass("img"+(i+1)); 
-            }else{
-                $('.slide .img:eq('+i+')').addClass("img5"); 
-            }
-        }
-    }
-
-
-    //根据轮播图片数量设定轮播图按钮数量
-    if(slideBt){
-        for(i=1;i<=slideNub;i++){
-            $('.slide-bt').append("<span data-slide-bt='"+i+"' onclick='tz("+i+")'></span>");
-        }
-        $('.slide-bt').width(slideNub*34);
-        $('.slide-bt').css("margin-left","-"+slideNub*17+"px");
-    }
-
-
-    //自动轮播
-    if(autoLb){
-        setInterval(function(){
-        right();
-    }, autoLbtime*1000);
-    }
-
-
-    if(touch){
-        k_touch();
-    }
-    slideLi();
-    imgClickFy();
-})
-
-
-//右滑动
-function right(){
-    var fy = new Array();
-    for(i=0;i<slideNub;i++){
-        fy[i]=$('.slide .img[data-slide-imgId='+i+']').attr("class");
-    }
-    for(i=0;i<slideNub;i++){
-        if(i==0){
-            $('.slide .img[data-slide-imgId='+i+']').attr("class",fy[slideNub-1]);
-        }else{
-           $('.slide .img[data-slide-imgId='+i+']').attr("class",fy[i-1]); 
-        }
-    }
-    imgClickFy();
-    slideLi();
+function changeBgImg() {
+	var img1 = document.getElementById('blur-bg'); //id码
+	var img2 = document.getElementById('head-banner');
+	var bgImg1 = img1.style.backgroundImage; //获取当前背景图片地址
+	var numValue = bgImg1.replace(/[^0-9]/ig, ""); //提取当前背景图片编号
+	numValue = Number(numValue) + Number(1); //编号加 1
+	var maxCnt = 16;
+	if (numValue > maxCnt) {
+		numValue = 1;
+	}
+	var name = 'url(bgimg_' + numValue + '.png)';
+	console.log(name);
+	img1.style.backgroundImage = name;
+	img2.style.backgroundImage = name;
 }
 
+window.onscroll = function goTopVisable() { //id = go-top-m
+	var h = document.documentElement.scrollTop + document.body.scrollTop;
 
-//左滑动
-function left(){
-    var fy = new Array();
-    for(i=0;i<slideNub;i++){
-        fy[i]=$('.slide .img[data-slide-imgId='+i+']').attr("class");
-    }
-    for(i=0;i<slideNub;i++){
-        if(i==(slideNub-1)){
-            $('.slide .img[data-slide-imgId='+i+']').attr("class",fy[0]);
-        }else{
-           $('.slide .img[data-slide-imgId='+i+']').attr("class",fy[i+1]); 
-        }
-    }
-    imgClickFy();
-    slideLi();
+	if (h > 100) {
+		document.getElementById("go-top-m").style.display = "block";
+		document.getElementById("go-top-m").style.opacity = h / 200 - 0.5; //过渡渐变效果
+	} else {
+		document.getElementById("go-top-m").style.display = "none";
+	}
 }
 
-
-//轮播图片左右图片点击翻页
-function imgClickFy(){
-    $('.slide .img').removeAttr("onclick");
-    $('.slide .img2').attr("onclick","left()");
-    $('.slide .img4').attr("onclick","right()");
+function pageScroll() //回到顶部
+{
+	//把内容滚动指定的像素数（第一个参数是向右滚动的像素数，第二个参数是向下滚动的像素数）    
+	window.scrollBy(0, -25);
+	//延时递归调用，模拟滚动向上效果    
+	scrolldelay = setTimeout('pageScroll()', 2);
+	//获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值可以得到网页的真正的scrollTop值    
+	var sTop = document.documentElement.scrollTop + document.body.scrollTop;
+	//判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）    
+	if (sTop == 0) clearTimeout(scrolldelay);
 }
 
-
-//修改当前最中间图片对应按钮选中状态
-function slideLi(){
-    var slideList = parseInt($('.slide .img3').attr("data-slide-imgId")) + 1;
-    $('.slide-bt span').removeClass("on");
-    $('.slide-bt span[data-slide-bt='+slideList+']').addClass("on");
-}
-
-
-//轮播按钮点击翻页
-function tz(id){
-    var tzcs = id - (parseInt($('.slide .img3').attr("data-slide-imgId")) + 1);
-    if(tzcs>0){
-        for(i=0;i<tzcs;i++){
-            setTimeout(function(){
-              right();  
-            },1);
-        }
-    }
-    if(tzcs<0){
-        tzcs=(-tzcs);
-        for(i=0;i<tzcs;i++){
-            setTimeout(function(){
-              left();  
-            },1);
-        }
-    }
-    slideLi();
-}
-
-
-//触摸滑动模块
-function k_touch() {
-    var _start = 0, _end = 0, _content = document.getElementById("slide");
-    _content.addEventListener("touchstart", touchStart, false);
-    _content.addEventListener("touchmove", touchMove, false);
-    _content.addEventListener("touchend", touchEnd, false);
-    function touchStart(event) {
-        var touch = event.targetTouches[0];
-        _start = touch.pageX;
-    }
-    function touchMove(event) {
-        var touch = event.targetTouches[0];
-        _end = (_start - touch.pageX);
-    }
-
-    function touchEnd(event) {
-        if (_end < -100) {
-            left();
-            _end=0;
-        }else if(_end > 100){
-            right();
-            _end=0;
-        }
-    }
+function js_click() { //测试程序
+	alert("js_单击");
 }

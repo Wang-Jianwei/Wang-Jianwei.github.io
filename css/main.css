@@ -452,7 +452,7 @@ a {
 .bili-header-m .head-banner .head-content .search .link-ranking span {
 	display: inline-block;
 	padding-left: 26px;
-	background: url(../image/main/排行榜.png) -2px -2px no-repeat;
+	background: url(../image/main/rank.png) -2px -2px no-repeat;
 	color: #f25d8e;
 }
 
@@ -662,7 +662,7 @@ a {
 	margin-right: 0px;
 	padding: 5px 15px 5px 25px;
  /* T R D L*/
-	background: url(../image/main/箭头.png) -2px -1px no-repeat;
+	background: url(../image/main/arrow.png) -2px -1px no-repeat;
 	color: #222;
 	white-space: nowrap;
 }
@@ -844,7 +844,7 @@ p {
 	margin-right: 10px;
 	width: 24px;
 	height: 24px;
-	background: url(../image/main/标签.png) -2px -2px no-repeat;
+	background: url(../image/main/label.png) -2px -2px no-repeat;
 	vertical-align: middle;
 }
 
