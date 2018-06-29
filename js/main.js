@@ -15,7 +15,7 @@ function changeBgImg() {
 	if (numValue > maxCnt) {
 		numValue = 1;
 	}
-	var name = 'url(bgimg_' + numValue + '.png)';
+	var name = 'url(image/main/bgimg_' + numValue + '.png)';
 	console.log(name);
 	img1.style.backgroundImage = name;
 	img2.style.backgroundImage = name;
