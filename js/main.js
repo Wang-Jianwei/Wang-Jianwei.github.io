@@ -6,6 +6,7 @@ substring() 提取字符串中的两个指定的索引号之间的字符；
 */
 
 function changeBgImg() {
+	alert("333");
 	var img1 = document.getElementById('blur-bg'); //id码
 	var img2 = document.getElementById('head-banner');
 	var bgImg1 = img1.style.backgroundImage; //获取当前背景图片地址
@@ -16,6 +17,7 @@ function changeBgImg() {
 		numValue = 1;
 	}
 	var name = 'url(image/main/bgimg_' + numValue + '.png)';
+	alert(name);
 	console.log(name);
 	img1.style.backgroundImage = name;
 	img2.style.backgroundImage = name;
