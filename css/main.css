@@ -91,6 +91,7 @@ a {
 
 .bili-wrapper.clearfix {
 	zoom: 1;
+	position: relative;
 }
 
 .clearfix:before {
