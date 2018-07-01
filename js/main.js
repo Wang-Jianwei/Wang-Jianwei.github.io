@@ -16,7 +16,6 @@ function changeBgImg() {
 		numValue = 1;
 	}
 	var name = 'url(image/main/bgimg_' + numValue + '.png)';
-	alert(name);
 	console.log(name);
 	img1.style.backgroundImage = name;
 	img2.style.backgroundImage = name;
