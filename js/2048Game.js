@@ -371,6 +371,26 @@ onmouseup = function mouseUp() {
 	}
 }
 
+ontouchstart = function touchDown() {
+	x = event.touches[0].clientX;
+	y = event.touches[0].clientY;	
+}
+
+ontouchend = function touchUp() {
+	if ((event.touches[0].clientY < y) && ((y - event.touches[0].clientY) > Math.abs(event.touches[0].clientX - x))) {
+		up();
+	}
+	if ((event.touches[0].clientY > y) && ((event.touches[0].clientY - y) > Math.abs(event.touches[0].clientX - x))) {
+		down();
+	}
+	if ((event.touches[0].clientX < x) && ((x - event.touches[0].clientX) > Math.abs(event.touches[0].clientY - y))) {
+		left();
+	}
+	if ((event.touches[0].clientX > x) && ((event.touches[0].clientX - x) > Math.abs(event.touches[0].clientY - y))) {
+		right();
+	}
+}
+
 function initPage() {
 	var rand_1 = Math.floor(Math.random()*4+1);
 	var rand_2 = Math.floor(Math.random()*4+1);
