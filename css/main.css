@@ -110,17 +110,7 @@ a {
 	position: absolute;
 	left: 5px;
 }
-/* .nav-item {
-	float: left; */
-/* text-align:  center; */
-/* line-height: 42px; */
-/* height: 42px; */
-/* position: relative; */
-/* background-color: hsla(0,0%,100%,0); */
-/* -webkit-transition: all .3s; */
-/* -o-transition: all .3s; */
-/* transition: all .3s; */
-/* list-style:none; */
+
 .bili-header-m .nav-menu .bili-wrapper .nav-con .nav-item {
 	position: relative;
 	float: left;
