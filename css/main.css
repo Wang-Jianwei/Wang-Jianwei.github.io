@@ -106,6 +106,7 @@ a {
 	float: left;
 	display: inline;
 	color: #222;
+	margin-left: 1px;
 }
 /* .nav-item {
 	float: left; */
@@ -476,7 +477,7 @@ a {
 
 .bili-header-m .head-banner .append-look {
 	z-index: 100;
-	margin-left: 95%;
+	margin-left: 86.5%;
 	width: 66px;
 	height: 20px;
 	background: url(../image/main/append.png) 15px 30px no-repeat;
@@ -531,6 +532,7 @@ a {
 
 .primary-menu .nav-menu li.home {
 	margin-right: 9px;
+	margin-left: 1px;
 }
 
 .primary-menu .nav-menu>li {
@@ -748,7 +750,7 @@ a {
 /*-----------------------------------*/
 .sub-nav-m {
 	position: relative;
-	margin: 10px 0 20px;
+	margin: 10px 0 20px 3px;
 }
 
 .sub-nav-m ul li:first-child {
@@ -833,6 +835,7 @@ p {
 /*-----------------------------------*/
 .tag-list-wrp {
 	padding-bottom: 40px;
+	margin-left: 1px;
 }
 
 .tag-list-wrp .title {
