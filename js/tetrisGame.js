@@ -46,7 +46,7 @@ for (var i = 0; i < M; i++) {
 		num[i][j].style.border = '1px solid #ccc';
 		num[i][j].style.backgroundColor = '#aaa';
 		// num[i][j].style.borderRadius = '2px';
-		document.getElementById("game-platform").append(num[i][j]);
+		document.getElementById("game-platform").appendChild(num[i][j]);
 	}
 }
 
@@ -175,7 +175,7 @@ function creatShape() {
 		currentDiv[j].style.lineHeight = '12px';
 		currentDiv[j].style.textAlign = 'center';
 		currentDiv[j].style.borderRadius = '2px';
-		document.getElementById("game-platform").append(currentDiv[j]);
+		document.getElementById("game-platform").appendChild(currentDiv[j]);
 	}
 }
 
@@ -214,7 +214,7 @@ function nextDisplay() {
 		m[j].style.backgroundColor = '#444';
 		m[j].style.top = (21+(p[j][0]-mid_x)*14)+'px';
 		m[j].style.left = (21+(p[j][1]-mid_y)*14)+'px';
-		document.getElementById("next").append(m[j]);
+		document.getElementById("next").appendChild(m[j]);
 	}
 }
 
