@@ -169,7 +169,6 @@ a {
 	display: inline-block;
 	width: 14px;
 	height: 21px;
-    /* border-radius: 3px; */
 	background: url(../image/main/app.png) -2px -2px no-repeat;
 	vertical-align: middle;
 }
@@ -186,7 +185,6 @@ a {
 	height: 48px;
 	border-radius: 0% 0% 20% 20%;
 	background-color: #f25d8e;
-/* background-image: url(../image/main/up_load.png); */
 	color: #fff;
 	text-align: center;
 	font-size: 14px;
@@ -195,7 +193,6 @@ a {
 
 .bili-header-m .nav-menu .bili-wrapper .up-load .u-link:hover {
 	background: linear-gradient(#ffafc9,#f25d8e);
-	/* background-color: hsla(0,0%,100%,.3); */
 }
 
 .bili-header-m .nav-menu .bili-wrapper .nav-con.fr {
@@ -269,7 +266,6 @@ a {
 	margin-top: -42px;
     /* height: 200px; */ /*暂时弃用*/
 	background: #eee;
-    /* background-image: url(bgimg_7.jpg); */
 	background-position: center -30px;
 	background-repeat: no-repeat;
 	box-shadow: inset 0px 1px 20px 0.1px #888888;
@@ -361,7 +357,7 @@ a {
 	height: 32px;
 	min-width: 0;
 	outline: none;
- /*去除外边框*/
+ 	/*去除外边框*/
 	border: none;
 	background: url(../image/main/search.png) 0px -2px;
 	cursor: pointer;
