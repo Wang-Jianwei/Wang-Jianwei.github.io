@@ -90,7 +90,6 @@ a {
 
 .bili-wrapper.clearfix {
 	zoom: 1;
-	position: relative;
 }
 
 .clearfix:before {
@@ -107,10 +106,19 @@ a {
 	float: left;
 	display: inline;
 	color: #222;
-	position: absolute;
-	left: 5px;
+	margin-left: 1px;
 }
-
+/* .nav-item {
+	float: left; */
+/* text-align:  center; */
+/* line-height: 42px; */
+/* height: 42px; */
+/* position: relative; */
+/* background-color: hsla(0,0%,100%,0); */
+/* -webkit-transition: all .3s; */
+/* -o-transition: all .3s; */
+/* transition: all .3s; */
+/* list-style:none; */
 .bili-header-m .nav-menu .bili-wrapper .nav-con .nav-item {
 	position: relative;
 	float: left;
@@ -169,6 +177,7 @@ a {
 	display: inline-block;
 	width: 14px;
 	height: 21px;
+    /* border-radius: 3px; */
 	background: url(../image/main/app.png) -2px -2px no-repeat;
 	vertical-align: middle;
 }
@@ -185,6 +194,7 @@ a {
 	height: 48px;
 	border-radius: 0% 0% 20% 20%;
 	background-color: #f25d8e;
+/* background-image: url(../image/main/up_load.png); */
 	color: #fff;
 	text-align: center;
 	font-size: 14px;
@@ -193,6 +203,7 @@ a {
 
 .bili-header-m .nav-menu .bili-wrapper .up-load .u-link:hover {
 	background: linear-gradient(#ffafc9,#f25d8e);
+	/* background-color: hsla(0,0%,100%,.3); */
 }
 
 .bili-header-m .nav-menu .bili-wrapper .nav-con.fr {
@@ -243,6 +254,13 @@ a {
 	border-radius: 50%;
 	transition: .2s;
 }
+/* .bili-header-m .nav-menu .bili-wrapper .nav-con .profile-info :hover {
+    background-color: hsla(0,0%,100%,0); */
+
+/* .bili-header-m .nav-menu .bili-wrapper .nav-con .dd-bubble {
+    position: absolute; */
+
+/* z-index: 1; */
 
 .bili-header-m .nav-menu .bili-wrapper .nav-con .nav-item .t .num {
 	position: absolute;
@@ -260,21 +278,67 @@ a {
 	line-height: 12px;
 }
 
+/* .bili-header-m .nav-menu .nav-con .nav-item .i-frame {
+    position: absolute; */
+
+/* left: 0; */
+
+/* top: 42px; */
+/* .bili-header-m .bubble-traditional {
+    padding: 14px; */
+/* .bili-header-m .bubble-traditional .recommand .title {
+    color: #212121; */
+/* font-size: 14px; */
+/* margin: 5px 0 12px; */
+/* font-weight: 900; */
+/* .bili-header-m .bubble-traditional .recommand .title .more {
+    float: right; */
+/* -webkit-box-sizing: border-box; */
+/* box-sizing: border-box; */
+/* border: 1px solid #ccd0d7; */
+/* font-weight: 400; */
+/* text-align: center; */
+/* border-radius: 4px; */
+/* width: 52px; */
+/* height: 22px; */
+/* line-height: 22px; */
+/* font-size: 12px; */
+/* color: #6d757a; */
+/* -webkit-transition: background .2s; */
+/* -o-transition: background .2s; */
+/* transition: background .2s; */
+
+/* .bili-header-m .b-icon.b-icon-arrow-r {
+    background-position: -478px -218px; */
+
+/* width: 6px; */
+
+/* height: 12px; */
+
+/* margin: -2px 0 0 5px; */
+
+/* .bili-header-m .bubble-traditional .recommand .bubble-col.bubble-col-3 .item {
+    width: 33%; */
+/* .bili-header-m .bubble-traditional .recommand .bubble-col .item {
+    display: inline-block; */
+/* margin-bottom: 7px; */
+
 .bili-header-m .head-banner {
 	position: relative;
 	z-index: 199;
 	margin-top: -42px;
     /* height: 200px; */ /*暂时弃用*/
 	background: #eee;
+    /* background-image: url(bgimg_7.jpg); */
 	background-position: center -30px;
 	background-repeat: no-repeat;
-	box-shadow: inset 0px 1px 20px 0.1px #888888;
+	box-shadow: inset 0px 1px 10px 0.1px #888888;
  /*添加内阴影(水平阴影的位置 垂直阴影的位置 模糊距离 阴影颜色)*/
 }
 
 .bili-header-m .head-banner .head-content {
 	position: relative;
-	height: 175px;
+	height: 140px;
 }
 
 .bili-header-m .head-banner .head-content .head-title {
@@ -357,7 +421,7 @@ a {
 	height: 32px;
 	min-width: 0;
 	outline: none;
- 	/*去除外边框*/
+ /*去除外边框*/
 	border: none;
 	background: url(../image/main/search.png) 0px -2px;
 	cursor: pointer;
@@ -395,7 +459,7 @@ a {
 
 .bili-header-m .head-banner .head-content .head-logo {
 	position: absolute;
-	top: 70px;
+	top: 45px;
 	left: 24px;
 	z-index: 10;
 	width: 220px;
@@ -421,6 +485,10 @@ a {
 	transition: height 1.5s, background 1.5s;
 }
 
+.bili-header-m .head-banner .append-look img {
+	z-index: 1000;
+}
+
 .bili-header-m .head-banner .append-look:hover {
 	height: 380px;
 	background: url(../image/main/append_next.png) no-repeat;
@@ -431,12 +499,12 @@ a {
 .bili-header-m .bili-wrapper.choose {
 	z-index: 200;
 	width: 100%;
-	box-shadow: 0px 1px 5px 1px #ddd;
+	/*box-shadow: 0px 1px 1px 0px #eee;*/
  /*添加外阴影(水平阴影的位置 垂直阴影的位置 模糊距离 阴影颜色)*/
 }
 
 .bili-header-m .bili-wrapper .primary-menu.border-b {
-	border-bottom: 0px solid #e5e9ef;
+	border-bottom: 1px solid #eee;
  /*添加下边缘*/
 }
 
@@ -447,7 +515,7 @@ a {
 	margin-bottom: 4px;
 	padding: 3px 0 0;
 	width: 980px;
-	height: 50px;
+	height: 45px;
 	border-bottom: 1px solid #fff;
 }
 
@@ -458,7 +526,7 @@ a {
 .bili-header-m .bili-wrapper .primary-menu .nav-menu {
 	position: relative;
 	z-index: 200;
-	height: 42px;
+	height: 18px;
 	color: #222;
 }
 
@@ -467,7 +535,7 @@ a {
 }
 
 .primary-menu .nav-menu li.home {
-	margin-right: 9px;
+	margin-right: 8px;
 	margin-left: 1px;
 }
 
@@ -686,7 +754,7 @@ a {
 /*-----------------------------------*/
 .sub-nav-m {
 	position: relative;
-	margin: 10px 0 20px 3px;
+	margin: 10px 0 20px 2px;
 }
 
 .sub-nav-m ul li:first-child {
